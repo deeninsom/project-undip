@@ -1,0 +1,167 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "mysql"
+  url      = env("DATABASE_URL")
+}
+
+model Session {
+  id        String   @id
+  sid       String   @unique
+  data      String
+  expiresAt DateTime
+}
+
+// model User {
+//   userId    String      @id @default(uuid())
+//   nama      String
+//   noInduk     String      @unique
+//   password  String
+//   role      String
+//   createdAt DateTime    @default(now())
+//   mahasiswa Mahasiswa[]
+//   dosen     Dosen[]
+//   admin     Admin[]
+// }
+
+//Data Mahasiswa
+model Mahasiswa {
+  id_mhs      String          @id @default(uuid())
+  nama        String
+  noInduk     String          @unique
+  angkatan    Int
+  password    String
+  status      String
+  image       String
+  url         String
+  role        String
+  createdAt   DateTime        @default(now())
+  biodata     Bio_mahasiswa[]
+  dataIrs     Irs[]
+  dataKhs     Khs[]
+  dataPkl     Pkl[]
+  dataSkripsi Skripsi[]
+  verifikasi Verifikasi?
+}
+
+model Verifikasi {
+  id_verif String @id @default(uuid())
+  verif String
+  author Mahasiswa @relation(fields: [id_verif], references: [id_mhs], onDelete: Cascade)
+}
+
+model Bio_mahasiswa {
+  id_bio   String    @id @default(uuid())
+  no_telp  String
+  provinsi String
+  email    String
+  kota     String
+  alamat   String
+  author   Mahasiswa @relation(fields: [id_bio], references: [id_mhs], onDelete: Cascade)
+}
+
+model Irs {
+  id_Irs    String    @id @default(uuid())
+  semester  String
+  jumlahSks Int
+  berkas    String
+  url       String
+  author    Mahasiswa @relation(fields: [id_Irs], references: [id_mhs], onDelete: Cascade)
+}
+
+// model CheckIrs {
+//   id_CheckIrs String @id @default(uuid())
+//   nilai       Int
+//   status      String
+// }
+
+model Pkl {
+  id_pkl         String    @id @default(uuid())
+  status_pkl     String
+  dospem         String
+  nama_instantsi String
+  berkas_pkl     String
+  url            String
+  author         Mahasiswa @relation(fields: [id_pkl], references: [id_mhs], onDelete: Cascade)
+  nilai nilaiPkl?
+}
+
+
+model nilaiPkl {
+  id_nilai String @id @default(uuid())
+  nilaiPkl String 
+  author Pkl @relation(fields: [id_nilai], references: [id_pkl], onDelete: Cascade)
+}
+
+model Khs {
+  id_khs       String    @id @default(uuid())
+  semester     String
+  ip_semester  String
+  ip_kumulatif String
+  jumlah_sks   Int
+  berkas_khs   String
+  url          String
+  author       Mahasiswa @relation(fields: [id_khs], references: [id_mhs], onDelete: Cascade)
+}
+
+model Skripsi {
+  id_skripsi     String    @id @default(uuid())
+  status_skripsi String
+  tgl_sidang     String
+  dospem         String
+  berkas_skripsi String
+  url            String
+  author         Mahasiswa @relation(fields: [id_skripsi], references: [id_mhs], onDelete: Cascade)
+}
+
+//Data Dosen
+
+model Dosen {
+  id_dsn           String @id @default(uuid())
+  nama             String
+  noInduk          String @unique
+  password         String
+  kode_departement String
+
+  role      String
+  createdAt DateTime @default(now())
+}
+
+//Data Admin
+model Admin {
+  id_adm           String   @id @default(uuid())
+  nama             String
+  noInduk          String   @unique
+  // email     String   @unique
+  password         String
+  kode_departement String
+  // author    User     @relation(fields: [id_adm], references: [userId], onDelete: Cascade)
+  // id_user   String
+  role             String
+  createdAt        DateTime @default(now())
+}
+
+// model Coba {
+//   id_img String @id @default(uuid())
+//   name   String
+//   image  String
+//   url    String
+// }
+
+//Data Skripsi
+// model Data_Skripsi {
+//   id_judul      String    @id @default(uuid())
+//   judul_skripsi String
+//   penulis       String
+//   jurusan       String
+//   angkatan      Int
+//   tahun_terbit  Int
+//   author        Mahasiswa @relation(fields: [id_judul], references: [id_mhs], onDelete: Cascade)
+//   terbit        DateTime  @db.Date()
+//   createdAt     DateTime  @default(now())
+// }

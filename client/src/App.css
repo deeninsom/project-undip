@@ -1,0 +1,178 @@
+/* .add-mahasiswa{
+    width: 100%;
+} */
+
+.modal {
+  width: 92%;
+  margin-left: 5%;
+  margin-top: -50px;
+  overflow: hidden;
+}
+
+
+backdrop {
+  width: 100%;
+}
+
+.form-select{
+  border-radius: 5px;
+}
+
+.fa-trash {
+  cursor: pointer;
+}
+
+.picture{
+  padding-top: 7%;
+}
+
+.select-sortir{
+  margin-left: -3%;
+}
+
+.card-dashboard{
+  text-decoration: none;
+  color: black;
+}
+
+.brand img{ 
+
+  width: 60%;
+  margin-top: -15%;
+  margin-left: 19%;
+}
+
+.gambar-profile{
+  margin-left: -4%;
+}
+
+.btn-cetak-excel{
+  width: 100px;
+	height: 30px;
+  cursor: pointer;
+	border-radius: 10px;
+  background-color: #31a991;
+  color: #fff;
+}
+
+.btn-profile-status{
+  width: 100px;
+	height: 30px;
+	border-radius: 10px;
+  background-color: #31a991;
+  color: #fff;
+  margin-left: 40px;
+}
+
+.gambar-profile img{
+ width: 200px;
+ padding: 20px;
+}
+
+
+/* .logo-login{
+  width: 200%;
+} */
+
+.form-control{
+  border-radius: 7px;
+  height: 40px;
+}
+.card-login{
+  box-shadow: 20px 20px 80px  rgb(218, 218, 218);
+  border-radius: 20px;
+  padding: 15px;
+  align-items: center;
+}
+
+.btn-login{
+	display: block;
+	width: 100%;
+	height: 50px;
+	border-radius: 10px;
+	outline: none;
+	border: none;
+	background-image: linear-gradient(to right, #48d4e6, #31a991, #70e1cb);
+	background-size: 200%;
+	font-size: 1.2rem;
+	color: #fff;
+	font-family: 'Poppins', sans-serif;
+	text-transform: uppercase;
+	margin: 1rem 0;
+	cursor: pointer;
+	transition: .5s;
+}
+
+.form-group{
+  border-radius: 6px;
+}
+
+.fa-pen {
+  cursor: pointer;
+}
+
+.nav-link-icon{
+  font-size: 20px;
+  cursor: pointer;
+}
+
+/* .btn-search {
+  width: 100%;
+} */
+
+.search {
+  width: 100%;
+  margin-left: -30px;
+}
+
+/* .control{
+  color: #31a991;
+} */
+
+.btn-search{
+  width: 80px;
+  height: 38px;
+  color: #fff;
+  background-color: #31a991;
+  border-radius: 7px;
+}
+
+.btn-upload{
+  width: 80px;
+  height: 38px;
+  color: #fff;
+  background-color: #69837e;
+  border-radius: 7px;
+}
+
+.btn-add {
+  width: 100%;
+  font-size: 15px;
+  border-radius: 8px;
+  padding: 5px;
+  margin-right: 20px;
+}
+
+/* .form-control{
+    margin-left: -30px;
+} */
+
+.pembatas{
+  width: 200px;
+}
+
+.pagination .page-link {
+  padding: 2px 8px;
+  cursor: pointer;
+  border-radius: 3px;
+  font-weight: 400;
+  /* border: none; */
+}
+
+
+
+.footer-table p {
+  font-size: 12px;
+}
+
+
