@@ -26,7 +26,7 @@ export const LoginUser = createAsyncThunk("user/LoginUser", async(user, thunkAPI
 
 export const getMe = createAsyncThunk("user/getMe", async(user, thunkAPI) => {
     try {
-        const response = await axios.get('https://server-web-undip.herokuapp.com//api/v1/me');
+        const response = await axios.get('https://server-web-undip.herokuapp.com/api/v1/me');
         return response.data;
     } catch (error) {
         if(error.response){
