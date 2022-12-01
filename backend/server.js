@@ -12,7 +12,7 @@ const mhs_router = require("./router/mahasiswa/mhs_router");
 const dosen = require("./router/dosen/dsn_router");
 const admin = require("./router/admin/adm_router");
 const authRouter = require("./router/authRouth/authRouter");
-const port = process.env.PORT || 5000;
+const port = process.env.PORT || 3000;
 require("dotenv").config();
 
 //middleware
@@ -34,7 +34,7 @@ app.use(
 app.use(
   cors({
     credentials: true,
-    origin: "http://localhost:3000",
+    origin: "https://project-undip-go7fh61kb-syihabuddin-sudo.vercel.app",
   })
 );
 app.use(express.json());
