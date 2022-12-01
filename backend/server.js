@@ -31,7 +31,7 @@ app.use(
 app.use(
   cors({
     credentials: true,
-    origin: "https://project-undip-go7fh61kb-syihabuddin-sudo.vercel.app",
+    origin: "https://project-undip.vercel.app",
   })
 );
 app.use(express.json());
