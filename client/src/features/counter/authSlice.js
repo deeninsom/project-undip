@@ -11,7 +11,7 @@ const initialState = {
 
 export const LoginUser = createAsyncThunk("user/LoginUser", async(user, thunkAPI) => {
     try {
-        const response = await axios.post(' http://localhost:5000/api/v1/login', {
+        const response = await axios.post(' https://server-web-undip.herokuapp.com/api/v1/login', {
             noInduk: user.noInduk,
             password: user.password
         });
@@ -26,7 +26,7 @@ export const LoginUser = createAsyncThunk("user/LoginUser", async(user, thunkAPI
 
 export const getMe = createAsyncThunk("user/getMe", async(user, thunkAPI) => {
     try {
-        const response = await axios.get(' http://localhost:5000/api/v1/me');
+        const response = await axios.get('https://server-web-undip.herokuapp.com//api/v1/me');
         return response.data;
     } catch (error) {
         if(error.response){
@@ -37,7 +37,7 @@ export const getMe = createAsyncThunk("user/getMe", async(user, thunkAPI) => {
 });
 
 export const LogOut = createAsyncThunk("user/LogOut", async() => {
-    await axios.delete(' http://localhost:5000/api/v1/logout');
+    await axios.delete(' https://server-web-undip.herokuapp.com/api/v1/logout');
 });
 
 export const authSlice = createSlice({
