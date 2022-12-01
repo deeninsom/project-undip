@@ -50,5 +50,5 @@ app.use("/api/v1", authRouter, mhs_router, dosen, admin);
 // 
 //on listen port
 app.listen(port,  () => {
-  console.log(`Server running at http://localhost:${port} `);
+  console.log(`Server running at `);
 });
