@@ -1,6 +1,5 @@
 const express = require("express");
 const app = express();
-const morgan = require("morgan");
 const cors = require("cors");
 const session = require("express-session");
 const { PrismaSessionStore } = require("@quixo3/prisma-session-store");
@@ -36,7 +35,6 @@ app.use(
   })
 );
 app.use(express.json());
-app.use(morgan("dev"));
 app.use(fileUpload())
 
 app.use(express.static("public"))
